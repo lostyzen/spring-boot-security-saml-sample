@@ -7,7 +7,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/vdenotaris/spring-boot-security-saml-sample.svg)](https://github.com/vdenotaris/spring-boot-security-saml-sample/network)
 [![GitHub stars](https://img.shields.io/github/stars/vdenotaris/spring-boot-security-saml-sample.svg)](https://github.com/vdenotaris/spring-boot-security-saml-sample/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/vdenotaris/spring-boot-security-saml-sample/master/LICENSE)
-![Beerpay](https://img.shields.io/beerpay/vdenotaris/spring-boot-security-saml-sample.svg)
 
 ---------
 
@@ -21,8 +20,8 @@ This project represents a sample implementation of a **SAML 2.0 Service Provider
 
 - **Author:** Vincenzo De Notaris ([dev@vdenotaris.com](mailto:dev@vdenotaris.com))
 - **Website:** [www.vdenotaris.com](http://www.vdenotaris.com)
-- **Version:**  ` 2.2.1.RELEASE`
-- **Last update**: October 2nd, 2019
+- **Version:**  ` 2.4.0.RELEASE`
+- **Last update**: December 19th, 2021
 
 Thanks to *Vladimír Schäfer* ([github.com/vschafer](https://github.com/vschafer)) for supporting my work.
 
@@ -37,6 +36,18 @@ Thanks to *Vladimír Schäfer* ([github.com/vschafer](https://github.com/vschafe
 
 > Spring SAML Extension allows seamless inclusion of SAML 2.0 Service Provider capabilities in Spring applications. All products supporting SAML 2.0 in Identity Provider mode (e.g. ADFS 2.0, Shibboleth, OpenAM/OpenSSO, Ping Federate, Okta) can be used to connect with Spring SAML Extension.
 > - **Ref.:** [http://projects.spring.io/spring-security-saml/](http://projects.spring.io/spring-security-saml/)
+
+---------
+
+## Changelog [new]
+
+- Version `2.4.0.RELEASE`:
+	- Update to Spring Boot `2.6.1`
+	- Update to JUnit `5`
+	- Update to Log4J `2.17.0` (see: [CVE-2021-44228](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228))
+	- Update to Jackson `2.13.0`
+	- Update to Apache Commons `4.4`
+	- A circular reference exists between the beans `samlEntryPoint` and `samlIDPDiscovery` that depends on the original design of the core *Spring SAML extension* library.
 
 ---------
 
@@ -57,7 +68,7 @@ docker run -it --rm -p 8080:8080 -t vdenotaris/spring-saml-sp:latest
 or compile the code and run the application with Maven:
 
 ```
-docker run -it --rm -p 8080:8080 -t vdenotaris/spring-saml-sp:2.2.1-mvn-jdk-8
+docker run -it --rm -p 8080:8080 -t vdenotaris/spring-saml-sp:2.4.0-mvn-jdk-8
 ```
 
 *Note: the related Docker image is publicly available on [Docker Hub](https://hub.docker.com/r/vdenotaris/spring-saml-sp/).*
@@ -109,7 +120,7 @@ To update the SSOCircle certificates within the keystore, just run:
 
 ### License
 
-    Copyright 2019 Vincenzo De Notaris
+    Copyright 2021 Vincenzo De Notaris
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -122,9 +133,4 @@ To update the SSOCircle certificates within the keystore, just run:
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 	See the License for the specific language governing permissions and
 	limitations under the License.
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/vdenotaris/spring-boot-security-saml-sample/badge.svg?style=beer-square)](https://beerpay.io/vdenotaris/spring-boot-security-saml-sample)  [![Beerpay](https://beerpay.io/vdenotaris/spring-boot-security-saml-sample/make-wish.svg?style=flat-square)](https://beerpay.io/vdenotaris/spring-boot-security-saml-sample?focus=wish)
 
